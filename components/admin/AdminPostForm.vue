@@ -43,6 +43,7 @@ export default {
     },
     onCancel() {
       // Navigate back
+      this.$router.push('/admin');
     }
   }
 };
