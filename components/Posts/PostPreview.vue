@@ -29,7 +29,7 @@ export default {
             type: String,
             required: true
         },
-        text: {
+        content: {
             type: String,
             required: true
         },

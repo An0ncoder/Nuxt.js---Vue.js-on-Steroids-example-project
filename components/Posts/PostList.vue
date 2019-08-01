@@ -8,7 +8,7 @@
       :thumbnail="post.thumbnail"
       :title="post.title"
       :previewText="post.previewText"
-      :text="post.text"
+      :content="post.content"
     />
   </section>
 </template>
