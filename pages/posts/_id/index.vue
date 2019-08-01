@@ -18,32 +18,17 @@
 </template>
 
 <script>
-export default {
-  asyncData(context, callback) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          loadedPost: {
-            id: "1",
-            title: "First post (ID: " + context.params.id + ")",
-            previewText: "This is our first post",
-            author: "Anon",
-            updatedDate: new Date(),
-            content:
-              "Some dummy text which is definitely not the preview text.",
-            thumbnail:
-              "https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg",
-            text: "just some text"
-          }
-        });
-      }, 1000);
-    })
-    then((data) => {
+import axios from 'Axios';
 
+export default {
+  asyncData(context) {
+    return axios.get('https://nuxt-blog-f461c.firebaseio.com/posts/' + context.params.id + '.json')
+    .then(res => {
+      return {
+        loadedPost: res.data
+      }
     })
-    .catch((e) => {
-      context.error(new Error());
-    })
+    .catch(e => context.error(e));
   }
 };
 </script>
