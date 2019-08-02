@@ -1,6 +1,6 @@
 <template>
   <div class="posts-page">
-    <PostList :is-admin="false" :posts="loadedPosts"/>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -11,9 +11,9 @@ export default {
   components: {
     PostList
   },
-  computed:  {
+  computed: {
     loadedPosts() {
-      return this.$store.getters.loadedPosts;
+      return this.$store.getters.loadedPosts
     }
   }
 };
@@ -27,4 +27,3 @@ export default {
   align-items: center;
 }
 </style>
-

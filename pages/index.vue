@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList :posts="loadedPosts" :is-admin="false"/>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -16,19 +16,25 @@ export default {
   },
   computed: {
     loadedPosts() {
-      return this.$store.getters.loadedPosts;
+      return this.$store.getters.loadedPosts
     }
   }
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
 };
 </script>
 
-<style>
+
+<style scoped>
 .intro {
   height: 300px;
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url("~assets/images/coffee.jpg");
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -53,10 +59,13 @@ export default {
     font-size: 2rem;
   }
 }
+
+.featured-posts {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 </style>
-
-
-
-
-
-

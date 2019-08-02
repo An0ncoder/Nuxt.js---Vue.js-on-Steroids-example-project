@@ -7,33 +7,33 @@
       :is-admin="isAdmin"
       :thumbnail="post.thumbnail"
       :title="post.title"
-      :previewText="post.previewText"
-      :content="post.content"
-    />
+      :previewText="post.previewText" />
   </section>
 </template>
 
 <script>
-import PostPreview from "@/components/Posts/PostPreview";
+import PostPreview from '@/components/Posts/PostPreview'
 
 export default {
   components: {
     PostPreview
   },
-  props : {
+  props: {
     isAdmin: {
       type: Boolean,
-      required: true
+      default: false
     },
     posts: {
       type: Array,
       required: true
     }
   }
-};
+}
 </script>
 
+
 <style scoped>
+
 .post-list {
   display: flex;
   padding: 20px;

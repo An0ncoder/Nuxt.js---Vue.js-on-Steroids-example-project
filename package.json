@@ -1,25 +1,20 @@
 {
-  "name": "blog",
+  "name": "nuxt-course",
   "version": "1.0.0",
-  "description": "My sensational Nuxt.js project",
-  "author": "",
+  "description": "Nuxt.js course for Udemy",
+  "author": "Maximilian Schwarzmüller",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "axios": "^0.17.1",
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^0.2.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "nodemon": "^1.18.9"
+    "cross-env": "^5.0.1"
   }
 }

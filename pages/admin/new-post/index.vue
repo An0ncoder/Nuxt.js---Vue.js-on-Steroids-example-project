@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Axios from "axios";
-import AdminPostForm from "@/components/admin/AdminPostForm";
+import axios from "axios";
+import AdminPostForm from "@/components/Admin/AdminPostForm";
 
 export default {
   layout: "admin",
@@ -17,18 +17,15 @@ export default {
   },
   methods: {
     onSubmitted(postData) {
-      Axios.post("https://nuxt-blog-f461c.firebaseio.com/posts.json", {
-        ...postData,
-        updatedDate: Date.now()
-      })
-        .then(result => console.log(result))
-        .catch(e => console.log(e));
+      this.$store.dispatch("addPost", postData).then(() => {
+        this.$router.push("/admin");
+      });
     }
   }
 };
 </script>
 
-<style <style scoped>
+<style scoped>
 .new-post-form {
   width: 90%;
   margin: 20px auto;
